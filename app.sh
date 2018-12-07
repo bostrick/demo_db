@@ -11,7 +11,7 @@ if [ "$CONTAINER_DEBUG"x != x ]; then
 fi
 
 if [ "$POSTGRESQL_SERVICE_HOST"x != x ]; then
-    export PYRAMID_SQLALCHEMY_URL="postgresql+psycopg2://bowe:$DEMODB_password:@$POSTGRESQL_SERVICE_HOST/demo_db"
+    export PYRAMID_SQLALCHEMY_URL="postgresql+psycopg2://bowe:$DEMODB_password@$POSTGRESQL_SERVICE_HOST/demo_db"
 fi
 
 if [ "$PYRAMID_SQLALCHEMY_URL"x != x ]; then
