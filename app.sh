@@ -10,6 +10,10 @@ if [ "$CONTAINER_DEBUG"x != x ]; then
     sleep 999999999
 fi
 
+if [ "$POSTGRESQL_SERVICE_HOST"x != x ]; then
+    export PYRAMID_SQLALCHEMY_URL="postgresql+psycopg2://bowe:$DEMODB_password:@$POSTGRESQL_SERVICE_HOST/demo_db"
+fi
+
 if [ "$PYRAMID_SQLALCHEMY_URL"x != x ]; then
   sed "/^sqlalchemy/s;=.*;= $PYRAMID_SQLALCHEMY_URL;" $F > $F.run.ini 
 else
