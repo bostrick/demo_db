@@ -1,0 +1,3 @@
+[run]
+source = demo_db
+omit = demo_db/test*
