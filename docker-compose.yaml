@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  web:
+    image: demo_db:1.0
+    environment:
+        #CONTAINER_DEBUG: "1"
+        PYRAMID_SQLALCHEMY_URL: "postgresql+psycopg2://bowe@db/demo_db"
+    volumes:
+       - ".:/opt/app-root/src"
+    ports:
+      - "8001:8080"
+    depends_on:
+      - db
